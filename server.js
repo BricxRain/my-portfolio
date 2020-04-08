@@ -1,6 +1,6 @@
-import express from "express";
-import favicon from "express-favicon";
-import path from "path";
+const express = require("express");
+const favicon = require("express-favicon");
+const path = require("path");
 
 const port = process.env.PORT || 3000;
 const app = express();
