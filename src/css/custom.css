@@ -1,0 +1,74 @@
+:root {
+    --primary: #0e473c;
+    --secondary: #6c757d;
+    --success: #28a745;
+    --info: #17a2b8;
+    --warning: #ffc107;
+    --danger: #dc3545;
+    --light: #f8f9fa;
+    --dark: #343a40;
+
+    --font-family-sans-serif: Montserrat !important;
+    --font-family-monospace: Montserrat !important;
+}
+
+body {
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif !important;
+}
+
+.primary {
+    background-color: #0e473c;
+    border-color: #0e473c;
+    border-radius: 0em;
+}
+
+.secondary {
+    background-color: #253949;
+    border-color: #253949;
+    border-radius: 0em;
+}
+
+.navbar {
+    padding: 25px 6px;
+}
+
+#header {
+    text-transform: uppercase;
+    margin-right: 20px;
+    font-size: 35px;
+    font-weight: 700;
+    transition: 0.6s;
+}
+
+#header span:hover {
+    color: #108ff2 !important;
+}
+
+.navbar-links a {
+    color: #ffffff !important;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.navbar-links a:hover {
+    color: #108ff2 !important;
+}
+
+.col-padding {
+    padding: 0px;;
+}
+
+.footer-style {
+    background-color: #6c757d;
+}
+
+.footer-style .container-fluid {
+    color: #ffffff;
+}
+
+.footer-style a {
+    color: #ffffff;
+    font-weight: 700;
+}
