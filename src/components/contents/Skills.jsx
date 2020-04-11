@@ -14,14 +14,14 @@ const StyledBannerPosition = styled.span`
     color: #595d61;
 `;
 
-class ContactMe extends React.Component {
+class Skills extends React.Component {
 
     render() {
         return (
-            <div>
+            <div style={{ background: '#eaf1f1' }}>
                 <Container style={{ padding: '60px 0' }}>
                     <div>
-                        <h1><StyledBannerName>Contact Me</StyledBannerName></h1>
+                        <h1><StyledBannerName>Skills</StyledBannerName></h1>
                     </div>
                     <div>
                         <hr style={{ marginTop: '8px', backgroundColor: '#0f473c', height: '3px', width: '50%' }}/>
@@ -36,4 +36,4 @@ class ContactMe extends React.Component {
 
 }
 
-export default ContactMe;
+export default Skills;

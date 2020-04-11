@@ -49,8 +49,9 @@ class Header extends React.Component {
                             </Nav>
                             <Nav className="navbar-links">
                                 <Nav.Link href="#home"><StyledNavbarLinks>About Me</StyledNavbarLinks></Nav.Link>
-                                <Nav.Link href="#home"><StyledNavbarLinks>My Interests</StyledNavbarLinks></Nav.Link>
-                                <Nav.Link href="#home"><StyledNavbarLinks>Contact Me</StyledNavbarLinks></Nav.Link>
+                                <Nav.Link href="#home"><StyledNavbarLinks>Skills</StyledNavbarLinks></Nav.Link>
+                                <Nav.Link href="#home"><StyledNavbarLinks>Interests</StyledNavbarLinks></Nav.Link>
+                                <Nav.Link href="#home"><StyledNavbarLinks>Contact</StyledNavbarLinks></Nav.Link>
                             </Nav>
                         </Navbar.Collapse>
                     </Container>

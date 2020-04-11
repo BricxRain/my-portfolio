@@ -3,13 +3,13 @@ import { Container } from 'react-bootstrap';
 import styled from 'styled-components';
 
 const StyledBannerName = styled.span`
-    font-family: 'Monserrat';
+    font-family: 'Yanus';
     color: #FFFFFF;
     text-transform: uppercase;
 `;
 
 const StyledBannerPosition = styled.span`
-    font-family: 'Monserrat';
+    font-family: 'Yanus';
     color: #FFFFFF;
 `;
 

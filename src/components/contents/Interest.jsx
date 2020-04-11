@@ -15,15 +15,15 @@ const StyledBannerPosition = styled.span`
     text-align: left;
     color: #595d61;
 `;
-    
-class AboutMe extends React.Component {
+
+class Interest extends React.Component {
 
     render() {
         return (
             <div>
                 <Container style={{ padding: '60px 0' }}>
                     <div>
-                        <h1><StyledBannerName>About Me</StyledBannerName></h1>
+                        <h1><StyledBannerName>Interest</StyledBannerName></h1>
                     </div>
                     <div>
                         <hr style={{ marginTop: '8px', backgroundColor: '#0f473c', height: '3px', width: '50%' }}/>
@@ -32,9 +32,11 @@ class AboutMe extends React.Component {
                     <Row style={{ marginRight: '0px', marginLeft: '0px', textAlign: 'left' }}>
                         <Col md="6">
                             <StyledBannerPosition>
-                                <p>I have over 6 years of experience as a software engineer, and have worked at both small startups and large organizations. While I'm a proficient full-stack developer, my expertise is in building scalable backend services (API services, stream processing, and async mechanisms).</p>
+                                <h4>My personal interests include:</h4>
 
-                                <p>I love building things. While hard engineering problems are often intrinsically fun to tackle, I'm most attracted to solving real customer problems with a business justification. I'm looking for a senior individual contributor role where I can take on on collaborative team leadership responsibilites, and gain experience with architecture and project management.</p>
+                                <li>Deep learning. It's an exciting time for machine learning. I'm working through several online classes, and swap articles with collegues.</li>
+                                <li>RC Planes and Boats. I've been an enthusiastic hobbiest since I was a teenager - but only as an adult am I able to afford the higher-quality devices. I like to modify existing kits to improve speed, and add instrumentation.</li>
+                                <li>Mountaineering. I live in the Pacific Northwest, home of some of the greatest mountains and trails in the country. I enjoy spending weekends on scrambles and getting lost in the woods.</li>
                             </StyledBannerPosition>
                         </Col>
 
@@ -57,4 +59,4 @@ class AboutMe extends React.Component {
 
 }
 
-export default AboutMe;
+export default Interest;

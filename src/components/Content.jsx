@@ -1,8 +1,9 @@
 import React from 'react';
 import Banner from './contents/Banner';
 import AboutMe from './contents/AboutMe';
-import MyInterest from './contents/MyInterest';
-import ContactMe from './contents/ContactMe';
+import Interest from './contents/Interest';
+import Contact from './contents/Contact';
+import Skills from './contents/Skills';
 
 class Content extends React.Component {
 
@@ -11,8 +12,9 @@ class Content extends React.Component {
             <React.Fragment >
                 <Banner />
                 <AboutMe />
-                <MyInterest />
-                <ContactMe />
+                <Skills />
+                <Interest />
+                <Contact />
             </React.Fragment>
         );
     }

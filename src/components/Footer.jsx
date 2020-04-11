@@ -10,14 +10,14 @@ const StyledFooterName = styled.span`
 class Footer extends React.Component {
     
     state = {
-        footer_class: ['font-small', 'pt-1', 'pb-1', 'mt-4', 'footer-style']
+        footer_class: ['font-small', 'pb-1', 'footer-style']
     }
 
     componentDidMount() {
         if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-            this.setState({
-                footer_class: [...this.state.footer_class, 'fixed-bottom']
-            });
+            // this.setState({
+            //     footer_class: [...this.state.footer_class, 'fixed-bottom']
+            // });
         }
     }
 
