@@ -9,9 +9,12 @@ const StyledBannerName = styled.span`
     color: #0f473c;
 `;
 
-const StyledBannerPosition = styled.span`
-    font-family: 'Monserrat';
-    color: #595d61;
+const StyledBannerNameSub = styled.span`
+    font-size: 1.7rem;
+    font-family: 'Yanus';
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #0f473c;
 `;
 
 class Skills extends React.Component {
@@ -26,8 +29,12 @@ class Skills extends React.Component {
                     <div>
                         <hr style={{ marginTop: '8px', backgroundColor: '#0f473c', height: '3px', width: '50%' }}/>
                     </div>
+
                     <div>
-                        <h3><StyledBannerPosition>Senior Software Engineer in Makati City, PH</StyledBannerPosition></h3>
+                        <h1><StyledBannerNameSub>Technology Use</StyledBannerNameSub></h1>
+                    </div>
+                    <div>
+                        <hr style={{ marginTop: '8px', backgroundColor: '#0f473c', height: '2px', width: '30%' }}/>
                     </div>
                 </Container>
             </div>
