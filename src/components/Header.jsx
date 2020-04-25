@@ -1,15 +1,12 @@
 import React from 'react';
-import { Navbar, Nav, Container, Row, Col } from 'react-bootstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLinkedin, faFacebookSquare, faTwitterSquare, faGithubSquare } from '@fortawesome/free-brands-svg-icons';
+import SocialLink from './links/SocialLink';
+import NavLink from './links/NavLink';
+import { Navbar, Nav, Container } from 'react-bootstrap';
+import { Link } from 'react-scroll';
 import styled from 'styled-components';
 
 const StyledNavbarBrand = styled.span`
     font-family: 'BuMarker';
-`;
-
-const StyledNavbarLinks = styled.span`
-    font-family: 'Yanus';
 `;
 
 class Header extends React.Component {
@@ -28,30 +25,24 @@ class Header extends React.Component {
             <React.Fragment>
                 <Navbar className="primary navbar" collapseOnSelect expand="lg" variant="dark" sticky="top">
                     <Container>
-                        <Navbar.Brand id="header" href="#home"><StyledNavbarBrand>Bricx Carasco</StyledNavbarBrand></Navbar.Brand>
+                        <Navbar.Brand id="header">
+                            <Link
+                                className="nav-link"
+                                to="scroll-banner" 
+                                spy={true} 
+                                smooth="easeInOutCubic" 
+                                offset={-500} 
+                                duration={1000}>
+                                <StyledNavbarBrand>Bricx Carasco</StyledNavbarBrand>
+                            </Link>
+                        </Navbar.Brand>
                         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                         <Navbar.Collapse id="responsive-navbar-nav">
                             <Nav className="mr-auto navbar-links">
-                                <Row>
-                                    <Col className="col-padding" xs={3}>
-                                        <Nav.Link href="https://ph.linkedin.com/in/bricx-carasco" target="_blank"><FontAwesomeIcon style={{ color: '#0073b0' }} icon={faLinkedin} size="lg"/></Nav.Link>
-                                    </Col>
-                                    <Col className="col-padding" xs={3}>
-                                        <Nav.Link href="https://github.com/BricxRain" target="_blank"><FontAwesomeIcon style={{ color: '#23292e' }} icon={faGithubSquare} size="lg"/></Nav.Link>
-                                    </Col>
-                                    <Col className="col-padding" xs={3}>
-                                        <Nav.Link href="https://www.facebook.com/iambricxrain" target="_blank"><FontAwesomeIcon style={{ color: '#1090f2' }} icon={faFacebookSquare} size="lg"/></Nav.Link>
-                                    </Col>
-                                    <Col className="col-padding" xs={3}>
-                                        <Nav.Link href="https://twitter.com/iambricxrain" target="_blank"><FontAwesomeIcon style={{ color: '#1ca1f2' }} icon={faTwitterSquare} size="lg"/></Nav.Link>
-                                    </Col>
-                                </Row>
+                                <SocialLink />
                             </Nav>
                             <Nav className="navbar-links">
-                                <Nav.Link href="#home"><StyledNavbarLinks>About Me</StyledNavbarLinks></Nav.Link>
-                                <Nav.Link href="#home"><StyledNavbarLinks>Skills</StyledNavbarLinks></Nav.Link>
-                                <Nav.Link href="#home"><StyledNavbarLinks>Interests</StyledNavbarLinks></Nav.Link>
-                                <Nav.Link href="#home"><StyledNavbarLinks>Contact</StyledNavbarLinks></Nav.Link>
+                                <NavLink />
                             </Nav>
                         </Navbar.Collapse>
                     </Container>

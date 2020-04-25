@@ -1,5 +1,6 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
+import { Element } from 'react-scroll';
 import styled from 'styled-components';
 
 const StyledBannerName = styled.span`
@@ -20,8 +21,9 @@ class Banner extends React.Component {
         return (
             <div style={{ backgroundColor: '#6c757d' }}>
                 <Container style={{ padding: '40px 0' }}>
+                    <Element id='scroll-banner' name='scroll-banner'></Element>
                     <div style={{ marginBottom: '30px' }}>
-                        <img style={{ borderRadius: '100%', border: '3px solid #FFFFFF', height: '300px', width: '300px' }} src={require('../../images/avatar-plain.png')} alt="" srcset=""/>
+                        <img style={{ borderRadius: '100%', border: '3px solid #FFFFFF', height: '300px', width: '300px' }} src={require('../../images/avatar-plain.png')} alt="" srcSet=""/>
                     </div>
                     <div>
                         <h1><StyledBannerName>Bricx J. Carasco</StyledBannerName></h1>

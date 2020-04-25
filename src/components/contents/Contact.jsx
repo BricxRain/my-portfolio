@@ -1,5 +1,6 @@
 import React from 'react';
 import { Container, Row, Col, InputGroup, FormControl, Button } from 'react-bootstrap';
+import { Element } from 'react-scroll';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faQuestion, faUserTie, faMailBulk, faPaperPlane } from '@fortawesome/free-solid-svg-icons';
 import styled from 'styled-components';
@@ -18,7 +19,9 @@ class Contact extends React.Component {
             <div style={{ background: '#eaf1f1' }}>
                 <Container style={{ padding: '60px 0' }}>
                     <div>
-                        <h1><StyledBannerName>Contact</StyledBannerName></h1>
+                        <Element id='scroll-contact' name='scroll-contact'>
+                            <h1><StyledBannerName>Contact</StyledBannerName></h1>
+                        </Element>
                     </div>
                     <div>
                         <hr style={{ marginTop: '8px', backgroundColor: '#0f473c', height: '3px', width: '50%' }}/>

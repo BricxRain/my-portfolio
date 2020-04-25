@@ -4,6 +4,7 @@ import AboutMe from './contents/AboutMe';
 import Interest from './contents/Interest';
 import Contact from './contents/Contact';
 import Skills from './contents/Skills';
+import Social from './contents/Social';
 
 class Content extends React.Component {
 
@@ -15,6 +16,7 @@ class Content extends React.Component {
                 <Skills />
                 <Interest />
                 <Contact />
+                <Social />
             </React.Fragment>
         );
     }

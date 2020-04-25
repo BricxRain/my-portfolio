@@ -1,5 +1,6 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
+import { Element } from 'react-scroll';
 import styled from 'styled-components';
 
 const StyledBannerName = styled.span`
@@ -23,7 +24,9 @@ class Interest extends React.Component {
             <div>
                 <Container style={{ padding: '60px 0' }}>
                     <div>
-                        <h1><StyledBannerName>Interest</StyledBannerName></h1>
+                        <Element id='scroll-interest' name='scroll-interest'>
+                            <h1><StyledBannerName>Interest</StyledBannerName></h1>
+                        </Element>
                     </div>
                     <div>
                         <hr style={{ marginTop: '8px', backgroundColor: '#0f473c', height: '3px', width: '50%' }}/>
