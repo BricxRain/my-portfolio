@@ -5,6 +5,7 @@ import Yanus from './fonts/yanus-font';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
+import Cursor from './animations/Cursor';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Content from './components/Content';
@@ -13,6 +14,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
+        <Cursor />
         <BumarkFont />
         <Yanus />
         <Header />

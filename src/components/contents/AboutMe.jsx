@@ -59,20 +59,20 @@ class AboutMe extends React.Component {
                                         2017
                                         <ul>
                                             <li>
-                                                Grand Champion - ISITE 2nd Regional IT Skills Competition
+                                                <b>Grand Champion</b> - ISITE 2nd Regional IT Skills Competition
                                                 <ul>
                                                     <li>
                                                         Mobile Application Development (University of Perpetual Help System)
                                                     </li>
                                                 </ul>
                                             </li>
-                                            <li>Best in Thesis (Laguna University)</li>
-                                            <li>Vice President's Lister (Laguna University)</li>
+                                            <li><b>Best in Thesis</b> (Laguna University)</li>
+                                            <li><b>Vice President's Lister</b> (Laguna University)</li>
                                         </ul> 
                                     </li>
-                                    <li>2016 - Best in Mobile Application Development (Laguna University)</li>
-                                    <li>2015 - Best in Java Programming (Laguna University)</li>
-                                    <li>2014 - Best in Project design (Laguna University)</li>
+                                    <li>2016 - <b>Best in Mobile Application Development</b> (Laguna University)</li>
+                                    <li>2015 - <b>Best in Java Programming</b> (Laguna University)</li>
+                                    <li>2014 - <b>Best in Project design</b> (Laguna University)</li>
                                 </ul>
 
                                 <h5>Significant Experiences</h5>
