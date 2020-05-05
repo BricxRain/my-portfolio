@@ -3,6 +3,7 @@ import { Container, Row, Col, InputGroup, FormControl, Button } from 'react-boot
 import { Element } from 'react-scroll';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faQuestion, faUserTie, faMailBulk, faPaperPlane } from '@fortawesome/free-solid-svg-icons';
+import CKEditor from 'ckeditor4-react';
 import styled from 'styled-components';
 
 const StyledBannerName = styled.span`
@@ -30,7 +31,7 @@ class Contact extends React.Component {
                     <Row className="pt-5 mr-0 ml-0" style={{ textAlign: 'left' }}>
                         <Col md="6">
                             <label htmlFor="basic-url">Subject</label>
-                            <InputGroup className="mb-4">
+                            <InputGroup className="mb-5">
                                 <InputGroup.Prepend>
                                     <InputGroup.Text id="basic-addon1" style={{ border: '0px' }}><FontAwesomeIcon size="2x" icon={faQuestion} /></InputGroup.Text>
                                 </InputGroup.Prepend>
@@ -43,7 +44,7 @@ class Contact extends React.Component {
                             </InputGroup>
 
                             <label htmlFor="basic-url">Name</label>
-                            <InputGroup className="mb-4">
+                            <InputGroup className="mb-5">
                                 <InputGroup.Prepend>
                                     <InputGroup.Text id="basic-addon1" style={{ border: '0px' }}><FontAwesomeIcon size="2x" icon={faUserTie} /></InputGroup.Text>
                                 </InputGroup.Prepend>
@@ -56,7 +57,7 @@ class Contact extends React.Component {
                             </InputGroup>
 
                             <label htmlFor="basic-url">Email Address</label>
-                            <InputGroup className="mb-4">
+                            <InputGroup className="mb-5">
                                 <InputGroup.Prepend>
                                     <InputGroup.Text id="basic-addon1" style={{ border: '0px' }}><FontAwesomeIcon size="2x" icon={faMailBulk} /></InputGroup.Text>
                                 </InputGroup.Prepend>
@@ -72,7 +73,10 @@ class Contact extends React.Component {
                         <Col md="6">
                             <div className="mb-4">
                                 <label htmlFor="basic-url">Message</label>
-                                <FormControl as="textarea" aria-label="Message" rows="7" />
+                                <CKEditor
+                                    data="<p>Message me!</p>"
+                                />
+                                {/* <FormControl as="textarea" aria-label="Message" rows="7" /> */}
                             </div>
 
                             <Button variant="outline-primary" className="float-right">Send Email <FontAwesomeIcon icon={faPaperPlane} /></Button>
