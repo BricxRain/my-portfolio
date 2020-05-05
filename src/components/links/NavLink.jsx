@@ -22,7 +22,6 @@ class NavLink extends React.Component {
     }
 
     render() { 
-        console.log(this.state.scroll_offset)
         return (
             <React.Fragment>
                 <Link
