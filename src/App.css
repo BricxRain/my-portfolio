@@ -39,7 +39,7 @@
 
 /* play with vars for different effets */
 :root {
-  --color-cursor: 240, 65, 219;
+  --color-cursor: 240, 199, 177;
   --cursor-outline-shade: 0.3;
   --cursor-size: 20px;
   --cursor-outline-size: 22px;
@@ -62,6 +62,7 @@ body * {
   position: absolute;
   top: 50%;
   left: 50%;
+  border: 1px solid #c17a55;
   border-radius: 50%;
   opacity: 0;
   transform: translate(-50%, -50%);

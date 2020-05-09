@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Row, Col, InputGroup, FormControl, Button } from 'react-bootstrap';
+import { Container, Row, Col, InputGroup, FormControl, Button, Fade } from 'react-bootstrap';
 import { Element } from 'react-scroll';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faQuestion, faUserTie, faMailBulk, faPaperPlane } from '@fortawesome/free-solid-svg-icons';
@@ -13,17 +13,24 @@ const StyledBannerName = styled.span`
     color: #0f473c;
 `;
 
+const defaultStateForm = {
+    subject: '',
+    name: '',
+    email: '',
+    message: '',
+    subjectError: '',
+    nameError: '',
+    emailError: '',
+    messageError: '',
+    emailResponse: null,
+    alertOpen: false
+};
+
 class Contact extends React.Component {
 
     constructor(props) {
         super(props);
-
-        this.state = {
-            subject: '',
-            name: '',
-            email: '',
-            message: ''
-        }
+        this.state = defaultStateForm;
     }
 
     changeHandler = e => {
@@ -34,21 +41,57 @@ class Contact extends React.Component {
         this.setState({
             message: e.editor.getData()
         });
-        console.log(this.state.message);
     }
 
     submitEmailHandler = e => {
         e.preventDefault();
-        console.log(this.state);
+        const isValid = this.validateForm();
+        if (isValid) {
+            this.sendEmailToMe();
+        }
     }
 
-    componentDidMount() {
-        console.log(process.env.REACT_APP_NODEMAILER_API_URL)
-        fetch(process.env.REACT_APP_NODEMAILER_API_URL)
-            .then(res => res.json())
-            .then((result) => { 
-                console.log(result);
-            });
+    validateForm = () => {
+        let subjectError = '';
+        let nameError = '';
+        let emailError = '';
+        let messageError = '';
+        
+        if (!this.state.subject)
+            subjectError = 'Subject is required!';
+
+        if (!this.state.name)
+            nameError = 'Name is required!';
+
+        if (!this.state.email || !this.state.email.includes('@') || !this.state.email.includes('.'))
+            emailError = 'Invalid email format!';
+
+        if (!this.state.message)
+            messageError = 'Message is required!';
+
+        if (subjectError || nameError || emailError || messageError) {
+            this.setState({ subjectError, nameError, emailError, messageError });
+            return false;
+        }
+        return true;
+    }
+
+    async sendEmailToMe() {
+        const { name, email, subject, message } = this.state;
+        const payload = { name, email, subject, message };
+        let response = await fetch(process.env.REACT_APP_NODEMAILER_API_URL_SEND_EMAIL, {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(payload)
+        });
+        let emailResponse = await response.json();
+        this.setState({ emailResponse, alertOpen: true });
+        setTimeout(() => {
+            this.setState(defaultStateForm);
+        }, 5000);
     }
 
     render() {
@@ -64,52 +107,81 @@ class Contact extends React.Component {
                         <hr style={{ marginTop: '8px', backgroundColor: '#0f473c', height: '3px', width: '50%' }}/>
                     </div>
                     <form onSubmit={this.submitEmailHandler}>
-                        <Row className="pt-5 mr-0 ml-0" style={{ textAlign: 'left' }}>
+                        <Row className="pt-2 mr-0 ml-0" style={{ textAlign: 'left' }}>
+                            <Col md="12">
+                                {!this.state.emailResponse ? this.state.emailResponse :
+                                <Fade in={this.state.alertOpen}>
+                                <div className="alert alert-success" role="alert">
+                                    {this.state.emailResponse.message}
+                                </div>
+                                </Fade>}
+                            </Col>
+                        </Row>
+                        <Row className="pt-2 mr-0 ml-0" style={{ textAlign: 'left' }}>
                             <Col md="6">
-                                <label htmlFor="basic-url">Subject</label>
-                                <InputGroup className="mb-5">
-                                    <InputGroup.Prepend>
-                                        <InputGroup.Text id="basic-addon1" style={{ border: '0px' }}><FontAwesomeIcon size="2x" icon={faQuestion} /></InputGroup.Text>
-                                    </InputGroup.Prepend>
-                                    <FormControl
-                                        name="subject"
-                                        onChange={this.changeHandler}
-                                        style={{ borderRadius: '0px' }}
-                                        placeholder="Subject"
-                                        aria-label="Subject"
-                                        aria-describedby="basic-addon1"
-                                        />
-                                </InputGroup>
+                                <div className="mb-4">
+                                    <label htmlFor="basic-url">Subject</label>
+                                    <InputGroup>
+                                        <InputGroup.Prepend>
+                                            <InputGroup.Text id="basic-addon1" style={{ border: '0px' }}><FontAwesomeIcon size="2x" icon={faQuestion} /></InputGroup.Text>
+                                        </InputGroup.Prepend>
+                                        <FormControl
+                                            name="subject"
+                                            value={this.state.subject}
+                                            onChange={this.changeHandler}
+                                            style={{ borderRadius: '0px' }}
+                                            placeholder="Subject"
+                                            aria-label="Subject"
+                                            aria-describedby="basic-addon1"
+                                            />
+                                    </InputGroup>
+                                        {this.state.subjectError ? <p className="ml-5 text-danger font-italic">
+                                            {this.state.subjectError}
+                                        </p> : null}
+                                </div>
 
-                                <label htmlFor="basic-url">Name</label>
-                                <InputGroup className="mb-5">
-                                    <InputGroup.Prepend>
-                                        <InputGroup.Text id="basic-addon1" style={{ border: '0px' }}><FontAwesomeIcon size="2x" icon={faUserTie} /></InputGroup.Text>
-                                    </InputGroup.Prepend>
-                                    <FormControl
-                                        name="name"
-                                        onChange={this.changeHandler}
-                                        style={{ borderRadius: '0px' }}
-                                        placeholder="Name"
-                                        aria-label="Name"
-                                        aria-describedby="basic-addon1"
-                                        />
-                                </InputGroup>
+                                <div className="mb-4">
+                                    <label htmlFor="basic-url">Name</label>
+                                    <InputGroup>
+                                        <InputGroup.Prepend>
+                                            <InputGroup.Text id="basic-addon1" style={{ border: '0px' }}><FontAwesomeIcon size="2x" icon={faUserTie} /></InputGroup.Text>
+                                        </InputGroup.Prepend>
+                                        <FormControl
+                                            name="name"
+                                            value={this.state.name}
+                                            onChange={this.changeHandler}
+                                            style={{ borderRadius: '0px' }}
+                                            placeholder="Name"
+                                            aria-label="Name"
+                                            aria-describedby="basic-addon1"
+                                            />
+                                    </InputGroup>
+                                        {this.state.nameError ? <p className="ml-5 text-danger font-italic">
+                                            {this.state.nameError}
+                                        </p> : null}
+                                </div>
 
-                                <label htmlFor="basic-url">Email Address</label>
-                                <InputGroup className="mb-5">
-                                    <InputGroup.Prepend>
-                                        <InputGroup.Text id="basic-addon1" style={{ border: '0px' }}><FontAwesomeIcon size="2x" icon={faMailBulk} /></InputGroup.Text>
-                                    </InputGroup.Prepend>
-                                    <FormControl
-                                        name="email"
-                                        onChange={this.changeHandler}
-                                        style={{ borderRadius: '0px' }}
-                                        placeholder="Email Address"
-                                        aria-label="Email Address"
-                                        aria-describedby="basic-addon1"
-                                        />
-                                </InputGroup>
+                                <div className="mb-4">
+                                    <label htmlFor="basic-url">Email Address</label>
+                                    <InputGroup>
+                                        <InputGroup.Prepend>
+                                            <InputGroup.Text id="basic-addon1" style={{ border: '0px' }}><FontAwesomeIcon size="2x" icon={faMailBulk} /></InputGroup.Text>
+                                        </InputGroup.Prepend>
+                                        <FormControl
+                                            name="email"
+                                            value={this.state.email}
+                                            onChange={this.changeHandler}
+                                            style={{ borderRadius: '0px' }}
+                                            placeholder="Email Address"
+                                            aria-label="Email Address"
+                                            aria-describedby="basic-addon1"
+                                            />
+                                    </InputGroup>
+                                        {this.state.emailError ? <p className="ml-5 text-danger font-italic">
+                                            {this.state.emailError}
+                                        </p> : null}
+                                </div>
+
                             </Col>
 
                             <Col md="6">
@@ -117,11 +189,12 @@ class Contact extends React.Component {
                                     <label htmlFor="basic-url">Message</label>
                                     <CKEditor
                                         name="message"
-                                        data="<p>Message me!</p>"
+                                        data={this.state.message}
                                         onChange={this.changeHandlerCKEditor}
                                     />
-                                    />
-                                    {/* <FormControl as="textarea" aria-label="Message" rows="7" /> */}
+                                    {this.state.messageError ? <p className="ml-5 text-danger font-italic">
+                                        {this.state.messageError}
+                                    </p> : null}
                                 </div>
 
                                 <Button type="submit" variant="outline-primary" className="float-right">Send Email <FontAwesomeIcon icon={faPaperPlane} /></Button>
