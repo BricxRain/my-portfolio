@@ -10,7 +10,7 @@ const SocialLink = () => {
                 <Nav.Link href="https://ph.linkedin.com/in/bricx-carasco" target="_blank"><FontAwesomeIcon style={{ color: '#0073b0' }} icon={faLinkedin} size="lg"/></Nav.Link>
             </Col>
             <Col className="col-padding" xs={3}>
-                <Nav.Link href="https://github.com/BricxRain" target="_blank"><FontAwesomeIcon style={{ color: '#23292e' }} icon={faGithubSquare} size="lg"/></Nav.Link>
+                <Nav.Link href="https://github.com/bricxcarasco" target="_blank"><FontAwesomeIcon style={{ color: '#23292e' }} icon={faGithubSquare} size="lg"/></Nav.Link>
             </Col>
             <Col className="col-padding" xs={3}>
                 <Nav.Link href="https://www.facebook.com/iambricxrain" target="_blank"><FontAwesomeIcon style={{ color: '#1090f2' }} icon={faFacebookSquare} size="lg"/></Nav.Link>
