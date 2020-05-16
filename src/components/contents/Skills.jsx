@@ -1,17 +1,11 @@
 import React from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container, Row, Col, Button } from 'react-bootstrap';
 import { Element } from 'react-scroll';
 import styled from 'styled-components';
+import SkillSoftwareEngineer from '../modals/SkillSoftwareEngineer';
+import SkillDevops from '../modals/SkillDevOps';
 
 const StyledBannerName = styled.span`
-    font-family: 'Yanus';
-    text-transform: uppercase;
-    font-weight: 700;
-    color: #0f473c;
-`;
-
-const StyledBannerNameSub = styled.span`
-    font-size: 1.7rem;
     font-family: 'Yanus';
     text-transform: uppercase;
     font-weight: 700;
@@ -29,12 +23,45 @@ const StyledBannerPosition = styled.span`
 const StyledUnorderedList = styled.span`
     font-family: 'Yanus';
     font-weight: 300;
-    font-size: 15px;
+    font-size: 20px;
     text-align: left;
     color: #595d61;
 `;
 
+const StyledEmphasis = styled.span`
+    font-weight: bold;
+    color: #0073b0;
+`;
+
 class Skills extends React.Component {
+
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            isSkillSoftwareEngineer: false,
+            isSkillDevOps: false
+        }
+    }
+
+    showModalSoftwareEngineer = () => {
+        this.setState({
+            isSkillSoftwareEngineer: true
+        });
+    }
+
+    showModalDevOps = () => {
+        this.setState({
+            isSkillDevOps: true
+        });
+    }
+
+    setModalClose = () => {
+        this.setState({
+            isSkillSoftwareEngineer: false,
+            isSkillDevOps: false
+        })
+    }
 
     render() {
         return (
@@ -50,59 +77,28 @@ class Skills extends React.Component {
                     </div>
 
                     <Row style={{ marginRight: '0px', marginLeft: '0px', textAlign: 'left' }}>
-                        <Col md="6">
+                        <Col md="12">
                             <StyledBannerPosition>
-                                <h4>DevOps</h4>
                                 <StyledUnorderedList>
                                     <ul className="skills-ul">
-                                        <li>
-                                            Great understanding on different operating systems such as Windows, MacOs, Unix and Linux.
-                                            <ul>
-                                                <li>
-                                                    Linux distributions (e.g Debian such as Ubuntu and Linux Mint, Fedora such as Red Hat and CentOS)
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li>Implements automated testing tools like PHPUnit, Dusk for Laravel and Selenium from previous projects.</li>
-                                        <li>Implements and maintains containerize application using Docker and deployment tools like Ansible and Terraform. </li>
-                                        <li>
-                                            Manages Amazon Web Services accounts with technologies (e.g EC2, RDS, ELB, EBD, S3, VPC, Route53, IAM, CloudWatch, CodePipeline, CodeBuild, CodeDeploy). Here are the responsibilities:
-                                            <ul>
-                                                <li>
-                                                    Deploying, automating, maintaining and managing AWS cloud based staging and production system.
-                                                </li>
-                                                <li>
-                                                    Build, release and configuration management of staging and production systems.
-                                                </li>
-                                                <li>
-                                                    System troubleshooting and problem solving across platform and application domains.
-                                                </li>
-                                                <li>
-                                                    Suggesting architecture improvements, recommending process improvements.
-                                                </li>
-                                            </ul>
-                                        </li>
+                                        <li>Proficiency in <StyledEmphasis>PHP</StyledEmphasis> programming language with frameworks like <StyledEmphasis>Laravel</StyledEmphasis>, <StyledEmphasis>Codeigniter</StyledEmphasis>, <StyledEmphasis>CakePHP</StyledEmphasis> and including <StyledEmphasis>native</StyledEmphasis> framework.</li>
+                                        <li>Proficiency in <StyledEmphasis>Javascript</StyledEmphasis> programming language with frameworks and libraries like <StyledEmphasis>NodeJs</StyledEmphasis>, <StyledEmphasis>React</StyledEmphasis>, <StyledEmphasis>Vue</StyledEmphasis>, <StyledEmphasis>AngularJs</StyledEmphasis>, <StyledEmphasis>jQuery</StyledEmphasis> and <StyledEmphasis>BackboneJs</StyledEmphasis>.</li>
+                                        <li>Knowledge in programming languages such as <StyledEmphasis>Java</StyledEmphasis> for Mobile Application Development and <StyledEmphasis>Python</StyledEmphasis> for Web Development.</li>
+                                        <li>Knowledge using <StyledEmphasis>Amazon Web Services</StyledEmphasis> with technologies such as Identity and Access Management (<StyledEmphasis>IAM</StyledEmphasis>), Elastic Compute Cloud (<StyledEmphasis>EC2</StyledEmphasis>), Simple Storage Service (<StyledEmphasis>S3</StyledEmphasis>), Virtual Private Cloud (<StyledEmphasis>VPC</StyledEmphasis>), Elastic Load Balancer (<StyledEmphasis>ELB</StyledEmphasis>), <StyledEmphasis>Route53</StyledEmphasis>, Relational Database Service (<StyledEmphasis>RDS</StyledEmphasis>), <StyledEmphasis>CloudWatch</StyledEmphasis>, <StyledEmphasis>CodeCommit</StyledEmphasis>, <StyledEmphasis>CodeBuild</StyledEmphasis>, <StyledEmphasis>CodeDeploy</StyledEmphasis> and <StyledEmphasis>CodePipeline</StyledEmphasis>.</li>
+                                        <li>Knowledge using <StyledEmphasis>DevOps</StyledEmphasis> automation technologies such as <StyledEmphasis>Docker</StyledEmphasis>, <StyledEmphasis>Vagrant</StyledEmphasis>, <StyledEmphasis>Heroku</StyledEmphasis>, <StyledEmphasis>Ansible</StyledEmphasis>, <StyledEmphasis>Terraform</StyledEmphasis>, <StyledEmphasis>Bash</StyledEmphasis> and <StyledEmphasis>YAML</StyledEmphasis></li>
                                     </ul>
                                 </StyledUnorderedList>
                             </StyledBannerPosition>
-                        </Col>
+                            <Row>
+                                <Col className="mb-2 text-center" md="6"><Button onClick={this.showModalSoftwareEngineer} variant="warning" className="skill-button">Responsibilities as a Software Engineer</Button></Col>
+                                <Col className="text-center" md="6"><Button onClick={this.showModalDevOps} variant="info" className="skill-button">Responsibilities as a DevOps</Button></Col>
+                            </Row>
 
-                        <Col md="6">
-                            <StyledBannerPosition>
-                                <h4>Technologies using..</h4>
-                                <p>Hello! i'm Bricx from Pagsanjan Laguna, currently residing at Makati City Philippines. I have over 3 years of experience as a Software Engineer and have worked at both small startups and large organizations. I'am a proficient full-stack engineer, but my expertise is in building scalable backend services. I also have great experience on DevOps works such deploying, automating, maintaining and managing servers or cloud based platform. I do also a lot of freelance work which i enjoyed on doing because it helps me to maintain my skills fresh on always updated about current innovations and technologies.</p>
-                                <p>I really enjoying what i'm doing right now. As a software engineer, my mindset is to learn things that related to this field on a daily basis. I always want to be the best version of myself yesterday. I used to read a lot of blog and contents about technologies, programming, software development and any related topics about my career path. I'm looking for a senior individual roles where i can take on collaborative team leadership responsibilities, share my experience and knowledge to young believers who are the passion same as me and gain more experience with architecture and project management.</p>
-                            </StyledBannerPosition>
+                            <SkillSoftwareEngineer show={this.state.isSkillSoftwareEngineer} onHide={this.setModalClose}/>
+                            <SkillDevops show={this.state.isSkillDevOps} onHide={this.setModalClose}/>
                         </Col>
                     </Row>
 
-
-                    <div>
-                        <h1><StyledBannerNameSub>Technology Use</StyledBannerNameSub></h1>
-                    </div>
-                    <div>
-                        <hr style={{ marginTop: '8px', backgroundColor: '#0f473c', height: '2px', width: '30%' }}/>
-                    </div>
                 </Container>
             </div>
         );

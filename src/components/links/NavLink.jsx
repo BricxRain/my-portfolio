@@ -32,7 +32,7 @@ class NavLink extends React.Component {
                     offset={this.state.scroll_offset} 
                     duration={1000} 
                     onSetActive={this.handleSetActive}>
-                    <StyledNavbarLinks>About Me</StyledNavbarLinks>
+                    <StyledNavbarLinks>Me</StyledNavbarLinks>
                 </Link>
 
                 <Link
@@ -48,13 +48,13 @@ class NavLink extends React.Component {
 
                 <Link
                     className="nav-link"
-                    to="scroll-interest" 
+                    to="scroll-projects" 
                     spy={true} 
                     smooth="easeInOutCubic" 
                     offset={this.state.scroll_offset} 
                     duration={1000} 
                     onSetActive={this.handleSetActive}>
-                    <StyledNavbarLinks>Interests</StyledNavbarLinks>
+                    <StyledNavbarLinks>Projects</StyledNavbarLinks>
                 </Link>
 
                 <Link

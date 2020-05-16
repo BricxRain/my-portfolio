@@ -17,15 +17,15 @@ const StyledBannerPosition = styled.span`
     color: #595d61;
 `;
 
-class Interest extends React.Component {
+class Projects extends React.Component {
 
     render() {
         return (
             <div>
                 <Container style={{ padding: '60px 0' }}>
                     <div>
-                        <Element id='scroll-interest' name='scroll-interest'>
-                            <h1><StyledBannerName>Interest</StyledBannerName></h1>
+                        <Element id='scroll-projects' name='scroll-projects'>
+                            <h1><StyledBannerName>Projects</StyledBannerName></h1>
                         </Element>
                     </div>
                     <div>
@@ -62,4 +62,4 @@ class Interest extends React.Component {
 
 }
 
-export default Interest;
+export default Projects;

@@ -14,7 +14,6 @@ const StyledBannerPosition = styled.span`
     color: #FFFFFF;
 `;
 
-
 class Banner extends React.Component {
 
     render() {
