@@ -1,7 +1,18 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import { Element } from 'react-scroll';
+import '../../css/projects.css';
 import styled from 'styled-components';
+import PesoSystem from '../modals/projects/PesoSystem';
+import RaceTechPH from '../modals/projects/RaceTechPH';
+import WorkBook from '../modals/projects/WorkBook';
+import AcrossWeb from '../modals/projects/AcrossWeb';
+import IbidenHRIS from '../modals/projects/IbidenHRIS';
+import IbidenLMS from '../modals/projects/IbidenLMS';
+import LegareSystem from '../modals/projects/LegareSystem';
+import MappleTour from '../modals/projects/MappleTour';
+import SAMSAdmin from '../modals/projects/SAMSAdmin';
+
 
 const StyledBannerName = styled.span`
     font-family: 'Yanus';
@@ -10,14 +21,79 @@ const StyledBannerName = styled.span`
     color: #0f473c;
 `;
 
-const StyledBannerPosition = styled.span`
-    font-family: 'Yanus';
-    font-size: 20px;
-    text-align: left;
-    color: #595d61;
-`;
+const defaultState = {
+    isPesoSystem: false,
+    isRaceTechPH: false,
+    isWorkBook: false,
+    isAcrossWeb: false,
+    isIbidenHRIS: false,
+    isIbidenLMS: false,
+    isLegareSystem: false,
+    isMappleTour: false,
+    isSAMSAdmin: false
+}
 
 class Projects extends React.Component {
+
+    state = defaultState;
+
+    setModalClose = () => {
+        this.setState(defaultState);
+    }
+
+    showModalPesoSystem = () => {
+        this.setState({
+            isPesoSystem: true
+        });
+    }
+
+    showModalRaceTechPH = () => {
+        this.setState({
+            isRaceTechPH: true
+        });
+    }
+
+    showModalWorkBook = () => {
+        this.setState({
+            isWorkBook: true
+        });
+    }
+
+    showModalAcrossWeb = () => {
+        this.setState({
+            isAcrossWeb: true
+        });
+    }
+
+    showModalIbidenHRIS = () => {
+        this.setState({
+            isIbidenHRIS: true
+        });
+    }
+
+    showModalIbidenLMS = () => {
+        this.setState({
+            isIbidenLMS: true
+        });
+    }
+
+    showModalLegareSystem = () => {
+        this.setState({
+            isLegareSystem: true
+        });
+    }
+
+    showModalMappleTour = () => {
+        this.setState({
+            isMappleTour: true
+        });
+    }
+
+    showModalSAMSAdmin = () => {
+        this.setState({
+            isSAMSAdmin: true
+        });
+    }
 
     render() {
         return (
@@ -34,27 +110,96 @@ class Projects extends React.Component {
                     
                     <Row style={{ marginRight: '0px', marginLeft: '0px', textAlign: 'left' }}>
                         <Col md="6">
-                            <StyledBannerPosition>
-                                <h4>My personal interests include:</h4>
-
-                                <li>Deep learning. It's an exciting time for machine learning. I'm working through several online classes, and swap articles with collegues.</li>
-                                <li>RC Planes and Boats. I've been an enthusiastic hobbiest since I was a teenager - but only as an adult am I able to afford the higher-quality devices. I like to modify existing kits to improve speed, and add instrumentation.</li>
-                                <li>Mountaineering. I live in the Pacific Northwest, home of some of the greatest mountains and trails in the country. I enjoy spending weekends on scrambles and getting lost in the woods.</li>
-                            </StyledBannerPosition>
+                            <figure onClick={this.showModalPesoSystem} className="snip1104 blue">
+                                <img src={require('../../images/projects/pesoemployment.png')} alt="sample34" />
+                                <figcaption>
+                                    <h2>PESO <span> System</span></h2>
+                                </figcaption>
+                            </figure>
                         </Col>
 
                         <Col md="6">
-                            <StyledBannerPosition>
-                                <h3>HIGHLIGHTS</h3>
-                                <li>Migrated a monolithic Heroku Ruby on Rails API to multiple Scala services hosted on AWS. Delivered ahead of schedule, projected to save $18k/quarter.</li>
-                                <li>Presented research and proof-of-concept to convince team to move from Hadoop MR to Spark; reduced nodes by 60% and ran 5-8x faster.</li>
-                                <li>Automated test automation in ramp-up to large data center migration, saving hundreds of developer hours.</li>
-                                <li>Presented "Understanding the GIL to Prevent Race Conditions" at RubyConf 2016.</li>
-                                <li>Awarded patent for novel approach to item normalization in 3rd party catalog data feeds.</li>
-                            </StyledBannerPosition>
+                            <figure onClick={this.showModalRaceTechPH} className="snip1104 green">
+                                <img src={require('../../images/projects/racetech.png')} alt="sample35" />
+                                <figcaption>
+                                    <h2>Race <span> TechPH</span></h2>
+                                </figcaption>
+                            </figure> 
+                        </Col>
+
+                        <Col md="6">
+                            <figure onClick={this.showModalWorkBook} className="snip1104 green">
+                                <img src={require('../../images/projects/workbook.png')} alt="sample34" />
+                                <figcaption>
+                                    <h2>Work <span> Book</span></h2>
+                                </figcaption>
+                            </figure>
+                        </Col>
+
+                        <Col md="6">
+                            <figure onClick={this.showModalAcrossWeb} className="snip1104 blue">
+                                <img src={require('../../images/projects/acrossweb.png')} alt="sample33" />
+                                <figcaption>
+                                    <h2>Across <span> WEB</span></h2>
+                                </figcaption>
+                            </figure>
+                        </Col>
+
+                        <Col md="6">
+                            <figure onClick={this.showModalIbidenHRIS} className="snip1104 blue">
+                                <img src={require('../../images/projects/acrossweb.png')} alt="sample35" />
+                                <figcaption>
+                                    <h2>Ibiden <span> HRIS</span></h2>
+                                </figcaption>
+                            </figure> 
+                        </Col>
+
+                        <Col md="6">
+                            <figure onClick={this.showModalIbidenLMS} className="snip1104 green">
+                                <img src={require('../../images/projects/acrossweb.png')} alt="sample34" />
+                                <figcaption>
+                                    <h2>Ibiden <span> LMS</span></h2>
+                                </figcaption>
+                            </figure>
+                        </Col>
+
+                        <Col md="6">
+                            <figure onClick={this.showModalLegareSystem} className="snip1104 green">
+                                <img src={require('../../images/projects/acrossweb.png')} alt="sample34" />
+                                <figcaption>
+                                    <h2>legare <span> System</span></h2>
+                                </figcaption>
+                            </figure>
+                        </Col>
+
+                        <Col md="6">
+                            <figure onClick={this.showModalMappleTour} className="snip1104 blue">
+                                <img src={require('../../images/projects/acrossweb.png')} alt="sample35" />
+                                <figcaption>
+                                    <h2>Mapple <span> Tour</span></h2>
+                                </figcaption>
+                            </figure> 
+                        </Col>
+
+                        <Col md="6">
+                            <figure onClick={this.showModalSAMSAdmin} className="snip1104 blue">
+                                <img src={require('../../images/projects/acrossweb.png')} alt="sample34" />
+                                <figcaption>
+                                    <h2>SAMS <span> Admin</span></h2>
+                                </figcaption>
+                            </figure>
                         </Col>
                     </Row>
 
+                    <PesoSystem show={this.state.isAcrossWeb} onHide={this.setModalClose}/>
+                    <RaceTechPH show={this.state.isRaceTechPH} onHide={this.setModalClose}/>
+                    <WorkBook show={this.state.isWorkBook} onHide={this.setModalClose}/>
+                    <AcrossWeb show={this.state.isAcrossWeb} onHide={this.setModalClose}/>
+                    <IbidenHRIS show={this.state.isIbidenHRIS} onHide={this.setModalClose}/>
+                    <IbidenLMS show={this.state.isIbidenLMS} onHide={this.setModalClose}/>
+                    <LegareSystem show={this.state.isLegareSystem} onHide={this.setModalClose}/>
+                    <MappleTour show={this.state.isMappleTour} onHide={this.setModalClose}/>
+                    <SAMSAdmin show={this.state.isSAMSAdmin} onHide={this.setModalClose}/>
                 </Container>
             </div>
         );

@@ -91,10 +91,15 @@ body {
 
 .skill-modal {
     border-radius: 0px;
+    font-size: 18px;
 }
 
 .skill-button-modal {
     border-radius: 0px;
+}
+
+.skill-li {
+    font-size: 16px !important;
 }
 
 .skill-li li {
@@ -103,4 +108,9 @@ body {
 
 .modal-content {
     border-radius: 0px !important;
+}
+
+.modal-title {
+    font-weight: bold;
+    font-size: 18px !important ;
 }

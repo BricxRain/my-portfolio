@@ -90,7 +90,7 @@ class Skills extends React.Component {
                                 </StyledUnorderedList>
                             </StyledBannerPosition>
                             <Row>
-                                <Col className="mb-2 text-center" md="6"><Button onClick={this.showModalSoftwareEngineer} variant="warning" className="skill-button">Responsibilities as a Software Engineer</Button></Col>
+                                <Col className="mb-2 text-center" md="6"><Button onClick={this.showModalSoftwareEngineer} variant="warning" className="skill-button">Skills as a Software Engineer</Button></Col>
                                 <Col className="text-center" md="6"><Button onClick={this.showModalDevOps} variant="info" className="skill-button">Responsibilities as a DevOps</Button></Col>
                             </Row>
 

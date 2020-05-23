@@ -21,7 +21,7 @@ const StyledBannerPosition = styled.span`
 const StyledUnorderedList = styled.span`
     font-family: 'Yanus';
     font-weight: 300;
-    font-size: 15px;
+    font-size: 14px;
     text-align: left;
     color: #595d61;
 `;
@@ -81,11 +81,19 @@ class AboutMe extends React.Component {
                                 </ul>
 
                                 <h5>Significant Experiences</h5>
-                                <li>Migrated a monolithic Heroku Ruby on Rails API to multiple Scala services hosted on AWS. Delivered ahead of schedule, projected to save $18k/quarter.</li>
-                                <li>Presented research and proof-of-concept to convince team to move from Hadoop MR to Spark; reduced nodes by 60% and ran 5-8x faster.</li>
-                                <li>Automated test automation in ramp-up to large data center migration, saving hundreds of developer hours.</li>
-                                <li>Presented "Understanding the GIL to Prevent Race Conditions" at RubyConf 2016.</li>
-                                <li>Awarded patent for novel approach to item normalization in 3rd party catalog data feeds.</li>
+                                <li>Discussed and presented in previous and current companies the <StyledEmphasis>importance and benefits of automating the process of deployment and automation testing</StyledEmphasis>, following the plan, execution and  implementation of this agenda.</li>
+                                <li>
+                                    {/* Promoted as Senior Software Engineer on December, 2019. */}
+                                    Promoted as <StyledEmphasis>Senior Software Engineer</StyledEmphasis>, handle tasks such as:
+                                    <ul>
+                                        <li>managing devops and automation procedure works, </li>
+                                        <li>improves operations by conducting systems analysis recommending changes in policies and procedures, </li>
+                                        <li>supports and develops other developers by providing advice, coaching and educational opportunities, </li>
+                                        <li>documents and demonstrates solutions by developing documentation, flowcharts, layouts, diagrams, charts, code reviews and clear code.</li>
+                                    </ul>
+                                </li>
+                                <li>Presented and discussed <StyledEmphasis>SEO technology</StyledEmphasis> on an IT Conference held in Laguna University, on May 2, 2018</li>
+                                <li>Presented and discussed the <StyledEmphasis>future of web development</StyledEmphasis> held in a college university.</li>
                             </StyledUnorderedList>
                         </Col>
                     </Row>

@@ -18,7 +18,7 @@ const SkillSoftwareEngineer = (props) => {
             >
             <Modal.Header closeButton>
                 <Modal.Title id="contained-modal-title-vcenter">
-                    Responsibilities as a Software Engineer
+                    Skills as a Software Engineer
                 </Modal.Title>
             </Modal.Header>
             <Modal.Body>
