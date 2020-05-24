@@ -1,8 +1,9 @@
 import React from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container, Row } from 'react-bootstrap';
 import { Element } from 'react-scroll';
 import '../../css/projects.css';
 import styled from 'styled-components';
+import ProjectFigure from '../sub-components/ProjectFigure';
 import PesoSystem from '../modals/projects/PesoSystem';
 import RaceTechPH from '../modals/projects/RaceTechPH';
 import WorkBook from '../modals/projects/WorkBook';
@@ -33,67 +34,133 @@ const defaultState = {
     isSAMSAdmin: false
 }
 
+const projects = [
+    {
+        id: 1,
+        image: "pesoemployment.png",
+        firstTitle: "peso",
+        secondTitle: "system",
+        color: "blue"
+    },
+    {
+        id: 2,
+        image: "racetech.png",
+        firstTitle: "race",
+        secondTitle: "techph",
+        color: "green"
+    },
+    {
+        id: 3,
+        image: "workbook.png",
+        firstTitle: "work",
+        secondTitle: "book",
+        color: "green"
+    },
+    {
+        id: 4,
+        image: "acrossweb.png",
+        firstTitle: "across",
+        secondTitle: "web",
+        color: "blue"
+    },
+    {
+        id: 5,
+        image: "pesoemployment.png",
+        firstTitle: "ibiden",
+        secondTitle: "hris",
+        color: "blue"
+    },
+    {
+        id: 6,
+        image: "racetech.png",
+        firstTitle: "ibiden",
+        secondTitle: "lms",
+        color: "green"
+    },
+    {
+        id: 7,
+        image: "pesoemployment.png",
+        firstTitle: "legare",
+        secondTitle: "system",
+        color: "green"
+    },
+    {
+        id: 8,
+        image: "racetech.png",
+        firstTitle: "mapple",
+        secondTitle: "tour",
+        color: "blue"
+    },
+    {
+        id: 9,
+        image: "pesoemployment.png",
+        firstTitle: "sams",
+        secondTitle: "admin",
+        color: "blue"
+    }
+];
+
 class Projects extends React.Component {
 
-    state = defaultState;
+    // state = defaultState;
 
-    setModalClose = () => {
-        this.setState(defaultState);
-    }
+    // setModalClose = () => {
+    //     this.setState(defaultState);
+    // }
 
-    showModalPesoSystem = () => {
-        this.setState({
-            isPesoSystem: true
-        });
-    }
+    // showModalPesoSystem = () => {
+    //     this.setState({
+    //         isPesoSystem: true
+    //     });
+    // }
 
-    showModalRaceTechPH = () => {
-        this.setState({
-            isRaceTechPH: true
-        });
-    }
+    // showModalRaceTechPH = () => {
+    //     this.setState({
+    //         isRaceTechPH: true
+    //     });
+    // }
 
-    showModalWorkBook = () => {
-        this.setState({
-            isWorkBook: true
-        });
-    }
+    // showModalWorkBook = () => {
+    //     this.setState({
+    //         isWorkBook: true
+    //     });
+    // }
 
-    showModalAcrossWeb = () => {
-        this.setState({
-            isAcrossWeb: true
-        });
-    }
+    // showModalAcrossWeb = () => {
+    //     this.setState({
+    //         isAcrossWeb: true
+    //     });
+    // }
 
-    showModalIbidenHRIS = () => {
-        this.setState({
-            isIbidenHRIS: true
-        });
-    }
+    // showModalIbidenHRIS = () => {
+    //     this.setState({
+    //         isIbidenHRIS: true
+    //     });
+    // }
 
-    showModalIbidenLMS = () => {
-        this.setState({
-            isIbidenLMS: true
-        });
-    }
+    // showModalIbidenLMS = () => {
+    //     this.setState({
+    //         isIbidenLMS: true
+    //     });
+    // }
 
-    showModalLegareSystem = () => {
-        this.setState({
-            isLegareSystem: true
-        });
-    }
+    // showModalLegareSystem = () => {
+    //     this.setState({
+    //         isLegareSystem: true
+    //     });
+    // }
 
-    showModalMappleTour = () => {
-        this.setState({
-            isMappleTour: true
-        });
-    }
+    // showModalMappleTour = () => {
+    //     this.setState({
+    //         isMappleTour: true
+    //     });
+    // }
 
-    showModalSAMSAdmin = () => {
-        this.setState({
-            isSAMSAdmin: true
-        });
-    }
+    // showModalSAMSAdmin = () => {
+    //     this.setState({
+    //         isSAMSAdmin: true
+    //     });
+    // }
 
     render() {
         return (
@@ -109,7 +176,10 @@ class Projects extends React.Component {
                     </div>
                     
                     <Row style={{ marginRight: '0px', marginLeft: '0px', textAlign: 'left' }}>
-                        <Col md="6">
+                        {
+                            projects.map(project => <ProjectFigure project={project} key={project.id} />)
+                        }
+                        {/* <Col md="6">
                             <figure onClick={this.showModalPesoSystem} className="snip1104 blue">
                                 <img src={require('../../images/projects/pesoemployment.png')} alt="sample34" />
                                 <figcaption>
@@ -181,14 +251,14 @@ class Projects extends React.Component {
                             </figure> 
                         </Col>
 
-                        <Col md="6">
+                        <Col md="6"> 
                             <figure onClick={this.showModalSAMSAdmin} className="snip1104 blue">
                                 <img src={require('../../images/projects/acrossweb.png')} alt="sample34" />
                                 <figcaption>
                                     <h2>SAMS <span> Admin</span></h2>
                                 </figcaption>
                             </figure>
-                        </Col>
+                        </Col>*/}
                     </Row>
 
                     <PesoSystem show={this.state.isAcrossWeb} onHide={this.setModalClose}/>
