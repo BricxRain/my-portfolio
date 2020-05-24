@@ -64,7 +64,7 @@ const Cursor = () => {
         window.removeEventListener("resize", onResize);
         cancelAnimationFrame(requestRef.current);
       };
-    }, []);
+    },[]);
   
     let { x, y } = mousePosition;
     const winDimensions = { width, height };
