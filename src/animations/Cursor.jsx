@@ -64,6 +64,7 @@ const Cursor = () => {
         window.removeEventListener("resize", onResize);
         cancelAnimationFrame(requestRef.current);
       };
+    // eslint-disable-next-line
     },[]);
   
     let { x, y } = mousePosition;
