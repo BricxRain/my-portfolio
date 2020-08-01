@@ -62,7 +62,7 @@ export const projects = [
     {
         id: 7,
         displayName: "legare Tour Booking System",
-        image: "pesoemployment.png",
+        image: "legare.png",
         firstTitle: "legare",
         secondTitle: "system",
         color: "green",
@@ -72,7 +72,7 @@ export const projects = [
     {
         id: 8,
         displayName: "Mapple Tour Booking Site",
-        image: "racetech.png",
+        image: "mapple.png",
         firstTitle: "mapple",
         secondTitle: "tour",
         color: "blue",
@@ -82,7 +82,7 @@ export const projects = [
     {
         id: 9,
         displayName: "SAMS Admin Booking Registration",
-        image: "pesoemployment.png",
+        image: "sams.png",
         firstTitle: "sams",
         secondTitle: "admin",
         color: "blue",
