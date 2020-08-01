@@ -9,13 +9,16 @@ const StyledEmphasis = styled.span`
 
 const Project = (props) => {    
     const [product, setProduct] = useState({});
+    const [show, setShow] = useState(false);
 
     useEffect(() => {
         setProduct(props.product);
+        setShow(true);
     },[props]);
 
     return (
         <Modal
+            show={show}
             className="skill-modal"
             {...props}
             size="lg"
@@ -29,7 +32,7 @@ const Project = (props) => {
             </Modal.Header>
             <Modal.Body>
                 <p>{ product.description }</p>
-                { product.url ? <a target="_blank" rel="noopener noreferrer" href={product.url}>{product.displayName}</a> : <p>Not available due to data and company privacy.</p> }
+                { product.url ? <a target="_blank" rel="noopener noreferrer" href={product.url}>{product.displayName}</a> : <p><i>Not available due to data and company privacy.</i></p> }
             </Modal.Body>
             <Modal.Footer>
                 <Button className="skill-button-modal" onClick={props.onHide}>Close</Button>
