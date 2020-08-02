@@ -90,7 +90,7 @@ export const projects = [
         url: "https://sams.mapple-tour.com/"
     },
     {
-        id: 9,
+        id: 10,
         displayName: "Bricxtagram App (An Instagram Clone App)",
         image: "bricxtagram.png",
         firstTitle: "bricxtagram",

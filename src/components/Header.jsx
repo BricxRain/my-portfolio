@@ -11,6 +11,11 @@ const StyledNavbarBrand = styled.span`
 
 class Header extends React.Component {
 
+    constructor(props) {
+        super(props);
+        this.refNavbarCollapse = React.createRef();
+    }
+
     scrollFunction = () => {
         if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
             document.getElementById('header').style.fontSize = "24px";
@@ -19,11 +24,20 @@ class Header extends React.Component {
         }
     }
 
+    toggleCollapseNavbar = () => {
+        this.refNavbarCollapse.current.classList.remove('show');
+    }
+
     render() {
         window.onscroll = () => {this.scrollFunction()};
         return (
             <React.Fragment>
-                <Navbar className="primary navbar" collapseOnSelect expand="lg" variant="dark" sticky="top">
+                <Navbar 
+                className="primary navbar" 
+                collapseOnSelect 
+                expand="lg" 
+                variant="dark" 
+                sticky="top">
                     <Container>
                         <Navbar.Brand id="header">
                             <Link
@@ -37,12 +51,12 @@ class Header extends React.Component {
                             </Link>
                         </Navbar.Brand>
                         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-                        <Navbar.Collapse id="responsive-navbar-nav">
+                        <Navbar.Collapse id="responsive-navbar-nav" ref={this.refNavbarCollapse}>
                             <Nav className="mr-auto navbar-links">
                                 <SocialLink />
                             </Nav>
                             <Nav className="navbar-links">
-                                <NavLink />
+                                <NavLink toggleCollapse={this.toggleCollapseNavbar} />
                             </Nav>
                         </Navbar.Collapse>
                     </Container>

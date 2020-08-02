@@ -15,7 +15,7 @@ class NavLink extends React.Component {
     componentDidMount() {
         let scroll_offset = -150;
         if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) )
-            scroll_offset = -360;
+            scroll_offset = -260;
         this.setState({
             scroll_offset
         });
@@ -26,6 +26,7 @@ class NavLink extends React.Component {
             <React.Fragment>
                 <Link
                     className="nav-link"
+                    onClick={this.props.toggleCollapse}
                     to="scroll-about-me" 
                     spy={true} 
                     smooth="easeInOutCubic" 
@@ -37,6 +38,7 @@ class NavLink extends React.Component {
 
                 <Link
                     className="nav-link"
+                    onClick={this.props.toggleCollapse}
                     to="scroll-skills" 
                     spy={true} 
                     smooth="easeInOutCubic" 
@@ -48,6 +50,7 @@ class NavLink extends React.Component {
 
                 <Link
                     className="nav-link"
+                    onClick={this.props.toggleCollapse}
                     to="scroll-projects" 
                     spy={true} 
                     smooth="easeInOutCubic" 
@@ -59,6 +62,7 @@ class NavLink extends React.Component {
 
                 <Link
                     className="nav-link"
+                    onClick={this.props.toggleCollapse}
                     to="scroll-contact" 
                     spy={true} 
                     smooth="easeInOutCubic" 
